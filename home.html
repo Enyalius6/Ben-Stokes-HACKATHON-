@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <style>
+      .navbar {
+        border: gray 1px solid;
+      }
+    </style>
+    <style>
+      #chat-container {
+        height: 400px;
+            width: 400px;
+        overflow-y: scroll;
+        border: 2px solid gray;
+        padding: 10px;
+            position: fixed;
+        bottom: 0;
+        right: 0;
+      }
+   
+      #user-input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light" style="background-color: greenyellow;">
+      <div class="navbar-brand"><img src="logo.png" width="150px" height="120px"></div>
+      <div class="nav-item" style="color:orangered;font-size: 30px;"><i><b>"Raise Your Voice, Empower Your Impact - Be the Change You Want to See!"</i></b></div>
+      <ul class="nav justify-content-end">
+     
+        <li class="nav-item">
+          <a class="nav-link" href="Login.html"
+            ><div class="btn btn-success">Login</div></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Register.html"
+            ><div class="btn btn-success">Register</div></a
+          >
+        </li>
+      </ul>
+    </nav>
+    <p style="text-align: center;font-size: 25px;"><i><b>For Support  Contact : abcd@gmail.com  Phone : 9123456780</b></i></p>
+    <hr>
+    <div class="row" style="background-color: white;">
+      <div class="col-sm-4">
+        <div class="card" style="background-color: white;">
+          <div class="card-body">
+            <img src="sexy.png">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card" style="background-color: white;">
+          <div class="card-body">
+            <p style="font-size: 23px;"><i>"Democracy is a system of government that empowers the people to determine their own fate. As a citizen, you hold the key to building a better future. It's your responsibility to play an active role in shaping society and creating a government that truly represents the people. Be a responsible citizen, make informed decisions, and let your voice be heard. Whether you're voting, advocating for change, or simply engaging in your community, your actions matter. Together, we can create a world where democracy flourishes and every voice is heard."</p></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="chat-container" style="background-color: bisque;">
+      <p style="font-size: 15px;">CHATBOT</p>
+    <input type="text" id="user-input">
+    <script>
+      // Define some sample responses for the chatbot
+      var responses = {
+        'how to create new id': 'Hello! please click on the register option and fill your details in the form and then proceed to logging in',
+        'how to file a new complaint': 'First Please proceed with  Login/Create new account and then click on the add complaint option on the top left',
+        'hi' :'Hello, How may I help you today?',
+  'hello':'Hello, How may I help you today?',
+    'help':'Hello, How may I help you today?',
+'how to register a complaint':'Click on Register a complaint as seen on the menu bar and fill in the required details',
+'how do I register a complaint':'Click on Register a complaint as seen on the menu bar and fill in the required details',
+'register a complaint':'Click on Register a complaint as seen on the menu bar and fill in the required details',
+'how to create a new complaint':'Click on Register a complaint as seen on the menu bar and fill in the required details',
+'how to complain':'Click on Register a complaint as seen on the menu bar and fill in the required details',
+'how do I view the already existing complaints': 'Click on the existing complaints as seen on the menu bar',
+'you are awful':'Sorry, You may leave a feedback by using the feedback option provided in the menu bar',
+'you are bad':'Sorry, You may leave a feedback by using the feedback option provided in the menu bar',
+'you are terrible':'Sorry, You may leave a feedback by using the feedback option provided in the menu bar',
+'you are shit':'Sorry, You may leave a feedback by using the feedback option provided in the menu bar',
+'you are stupid':'Sorry, You may leave a feedback by using the feedback option provided in the menu bar',
+
+
+
+
+        'default': 'I\'m sorry, I\'m not sure I understand. Can you please try asking again?'
+      };
+ 
+      // Define a function to process the user's input and generate a response
+      function respond() {
+        var userInput = document.getElementById('user-input').value.toLowerCase();
+        var chatContainer = document.getElementById('chat-container');
+        var chatbotResponse = '';
+ 
+        // Check if the user's input matches any known responses
+        for (var key in responses) {
+          if (userInput.includes(key)) {
+            chatbotResponse = responses[key];
+            break;
+          }
+        }
+ 
+        // If no known responses match, use the default response
+        if (!chatbotResponse) {
+          chatbotResponse = responses['default'];
+        }
+ 
+        // Display the user's input and the chatbot's response in the chat container
+        chatContainer.innerHTML += '<p><strong>You:</strong> ' + userInput + '</p>';
+        chatContainer.innerHTML += '<p><strong>Chatbot:</strong> ' + chatbotResponse + '</p>';
+ 
+        // Clear the input field
+        document.getElementById('user-input').value = '';
+             
+      }
+ 
+      // Add an event listener to the input field to trigger the respond function when the user hits the enter key
+      document.getElementById('user-input').addEventListener('keyup', function(event) {
+        if (event.keyCode === 13) {
+          respond();
+        }
+      });
+    </script>
+      </div>
+  </body>
+</html>

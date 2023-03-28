@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Complaint Form</title>
+    <link rel="stylesheet" href="first.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="registration_form">
+        <div class="title">Complaint Form</div>
+        <form>
+          <div class="form-group">
+            <label for="profile">Upload images related to problem</label>
+            <input type="file" name="profile" id="profile" />
+          </div>
+          <div class="form-group">
+            <a href="maps.html" target="_blank"> Upload Location</a>
+          </div>
+        </form>
+        <form action="addcomplaint.php" method="post">
+          <div class="form_wrap">
+            <div class="form-group">
+              <label for="fname">Name</label>
+              <input type="text" id="Name" name="Name" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="text" id="Phone" name="Phone" size="10" />
+            </div>
+            <div class="form-group">
+              <label for="country">Department</label>
+              <select id="Department" class="form-control" name="Department">
+                <option>Choose...</option>
+                <option>TSSPDCL</option>
+                <option>Heatlh Care</option>
+                <option>Stray Dogs</option>
+                <option>Local nuisance</option>
+                <option>Labour</option>
+                <option>Drainage Repairs</option>
+                <option>Road Repairs</option>
+                <option>Water Issues</option>
+                <option>Garbage Disposal</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="country">State Your Problem</label>
+              <input type="text" id="Subject" name="Subject" />
+            </div>
+            <div class="form-group">
+              <label for="Location">Location</label>
+              <input type="text" id="Location" name="Location" />
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary btn-block" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
